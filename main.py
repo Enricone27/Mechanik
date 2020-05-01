@@ -148,7 +148,6 @@ class horizontalerWurf:
 
 
 
-
 root = Tk()
 
 
