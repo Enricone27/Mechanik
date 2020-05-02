@@ -41,16 +41,34 @@ class Fenster:
             def __init__(self,master):
                 self.turtle = RawTurtle(master)
                 self.turtle.ht()
+                self.turtle.speed(0)
                 self.los()
 
 
-            # basic schlechtes System mahlen
+            # basic System mahlen
             def los(self):
-                self.turtle.forward(100)
-                self.turtle.left(180)
-                self.turtle.forward(100)
-                self.turtle.right(90)
-                self.turtle.forward(50)
+                a = 10
+                r=40
+                self.turtle.penup()
+                self.turtle.goto(-400,-200)
+                self.turtle.pendown()
+                
+
+                self.turtle.left(90)
+                for i in range(2):
+                    for i in range(r*(i+1)):
+                        self.turtle.forward(1*a)
+                        self.turtle.right(90)
+                        self.turtle.forward(0.2*a)
+                        self.turtle.left(180)
+                        self.turtle.forward(0.4*a)
+                        self.turtle.left(180)
+                        self.turtle.forward(0.2*a)
+                        self.turtle.left(90)
+                    self.turtle.right(90)
+                    self.turtle.goto(-400,-200)
+                    
+
 
         # Klasse des wirklichen Zeichnens
         class Exer:
@@ -118,7 +136,10 @@ class horizontalerWurf:
         self.Sv_t = 0
         self.Sh_t = 0
         self.tur.penup()
-        self.tur.goto(0,(self.H0*self.A))
+        self.tur.goto(-400,-200)
+        self.tur.left(90)
+        self.tur.forward((self.H0*self.A))
+        self.tur.right(90)
         #self.tur.goto(-(self.V0*self.tS)*self.A,(self.H0*self.A))
         self.tur.pendown()
 
